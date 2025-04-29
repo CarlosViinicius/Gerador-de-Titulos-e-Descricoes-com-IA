@@ -1,1 +1,21 @@
+# Variáveis de ambiente
+.env
+
+# Node.js (frontend React)
 node_modules/
+build/
+dist/
+
+# Python (backend FastAPI)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env/
+*.sqlite3
+
+# VSCode e sistema operacional
+.vscode/
+.DS_Store
+*.log
