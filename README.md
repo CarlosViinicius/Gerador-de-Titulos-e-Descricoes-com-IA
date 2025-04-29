@@ -54,8 +54,8 @@ docker-compose up --build
 
 - ✅ **Geração Automática**: Títulos e descrições baseados nas informações do produto.
 - ✅ **Salvar Resultados**: Histórico local das criações no navegador.
-- 🔜 **Exportar para TXT** _(em desenvolvimento)_
-- 🔜 **Tela de Login** _(em planejamento)_
+- ✅ **Exportar para TXT**.
+- ✅ **Tela de Login**.
 
 ---
 
