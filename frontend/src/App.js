@@ -119,6 +119,7 @@ function LoginPage({
 }
 function MainPage() {
   const [categoria, setCategoria] = useState("");
+  const [outraCategoria, setOutraCategoria] = useState("");
   const [material, setMaterial] = useState("");
   const [tom, setTom] = useState("");
   const [beneficios, setBeneficios] = useState("");
@@ -126,28 +127,32 @@ function MainPage() {
   const [historico, setHistorico] = useState([]);
   const [gerando, setGerando] = useState(false);
 
-  const categorias = ["Camisa", "Calçado", "Bolsa", "Acessório"];
+  const categorias = ["Camisa", "Calçado", "Bolsa", "Acessório", "Outros"];
   const tons = ["Informal", "Profissional", "Divertido", "Elegante"];
 
   // Carregar histórico do sessionStorage
   useEffect(() => {
     const savedHistorico =
       JSON.parse(sessionStorage.getItem("historico")) || [];
-    setHistorico(savedHistorico); // Atualiza o estado com os dados carregados
+    setHistorico(savedHistorico);
   }, []);
 
   // Salvar histórico no sessionStorage quando for atualizado
   useEffect(() => {
     if (historico.length > 0) {
-      sessionStorage.setItem("historico", JSON.stringify(historico)); // Atualiza o sessionStorage
+      sessionStorage.setItem("historico", JSON.stringify(historico));
     }
-  }, [historico]); // Roda sempre que o histórico for alterado
+  }, [historico]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setGerando(true);
 
-    const dados = { categoria, beneficios, material };
+    const dados = {
+      categoria: categoria === "Outros" ? outraCategoria : categoria,
+      beneficios,
+      material,
+    };
 
     try {
       const resposta = await fetch("http://localhost:8000/gerar", {
@@ -241,10 +246,13 @@ function MainPage() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row md:items-stretch gap-6">
         {/* Formulário */}
-        <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-md">
-          <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-md flex flex-col h-96">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col h-full justify-between"
+          >
             <label className="block text-xs font-medium text-gray-700">
               Categoria
             </label>
@@ -258,6 +266,16 @@ function MainPage() {
                 <option key={cat}>{cat}</option>
               ))}
             </select>
+
+            {categoria === "Outros" && (
+              <input
+                type="text"
+                className="w-full px-3 py-1.5 rounded border text-sm mt-2"
+                placeholder="Digite a nova categoria"
+                value={outraCategoria}
+                onChange={(e) => setOutraCategoria(e.target.value)}
+              />
+            )}
 
             <label className="block text-xs font-medium text-gray-700">
               Material
@@ -305,7 +323,7 @@ function MainPage() {
         </div>
 
         {/* Resultado */}
-        <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center">
+        <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center h-96">
           {itemSelecionado ? (
             <>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">
@@ -337,7 +355,7 @@ function MainPage() {
         </div>
 
         {/* Histórico */}
-        <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-md max-h-[400px] overflow-y-auto">
+        <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-md flex flex-col h-96 overflow-y-auto">
           <h3 className="text-sm font-semibold mb-2">Histórico</h3>
           <ul className="space-y-2">
             {historico.map((item, idx) => (
