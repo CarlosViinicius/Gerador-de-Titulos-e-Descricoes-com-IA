@@ -75,29 +75,12 @@ docker-compose up --build
 
 ---
 
-## 🚀 **Como Contribuir**
+🔐 Credenciais de Acesso (Ambiente Local)
+Para acessar o sistema localmente, use o seguinte login:
 
-1. Faça um fork do projeto.
-2. Crie uma nova branch:
+Usuário: admin
 
-```bash
-git checkout -b minha-feature
-```
-
-3. Faça suas alterações.
-4. Realize o commit:
-
-```bash
-git commit -m "Descrição clara da mudança"
-```
-
-5. Envie a branch:
-
-```bash
-git push origin minha-feature
-```
-
-6. Abra um Pull Request.
+Senha: 1234
 
 ---
 
