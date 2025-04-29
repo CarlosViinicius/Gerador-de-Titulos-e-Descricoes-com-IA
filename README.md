@@ -1,18 +1,18 @@
 # 🚀 **Gerador de Títulos e Descrições com IA** ✨
 
-## 🔥 **Crie títulos e descrições automaticamente com Inteligência Artificial**
+## 🔥 **Crie títulos e descrições de produtos com Inteligência Artificial**
 
-Este projeto permite a criação de **títulos e descrições** de produtos de forma rápida e simples utilizando **Inteligência Artificial (IA)**.
+Este projeto permite gerar **títulos e descrições** automaticamente utilizando **Inteligência Artificial (IA)** de forma rápida, simples e eficiente.
 
 ---
 
 ## ⚙️ **Tecnologias Utilizadas**
 
-- **React**: Framework para o desenvolvimento do front-end.
-- **Tailwind CSS**: Estilização e responsividade.
-- **FastAPI**: Back-end para geração de conteúdos.
-- **Docker**: Containerização da aplicação para facilitar o deploy.
-- **SessionStorage/LocalStorage**: Armazenamento local de histórico.
+- **React**: Desenvolvimento do front-end.
+- **Tailwind CSS**: Estilização e responsividade do front-end.
+- **FastAPI**: Desenvolvimento do back-end.
+- **Docker e Docker Compose**: Containerização da aplicação.
+- **SessionStorage**: Armazenamento local de histórico.
 
 ---
 
@@ -21,29 +21,21 @@ Este projeto permite a criação de **títulos e descrições** de produtos de f
 ### 1. **Clonar o Repositório**
 
 ```bash
-git clone https://github.com/usuario/projeto.git
-cd projeto
+git clone https://github.com/CarlosViinicius/Gerador-de-Titulos-e-Descricoes-com-IA.git
+cd Gerador-de-Titulos-e-Descricoes-com-IA
 ```
 
-### 2. **Instalar as Dependências**
+### 2. **Configurar as Variáveis de Ambiente**
 
-#### **Frontend (React)**
-
-Navegue até a pasta do frontend e instale as dependências:
+Crie um arquivo `.env` dentro da pasta `backend/` baseado no arquivo `.env.example`:
 
 ```bash
-cd frontend
-npm install
+# backend/.env
+API_KEY=sua-chave-da-openai
+BACKEND_URL=http://localhost:8000
 ```
 
-#### **Backend (FastAPI)**
-
-Navegue até a pasta do backend e instale as dependências:
-
-```bash
-cd backend
-pip install -r requirements.txt
-```
+> ⚠️ **Nunca envie o seu `.env` para o GitHub!**
 
 ### 3. **Rodar os Containers com Docker Compose**
 
@@ -56,24 +48,23 @@ docker-compose up --build
 ### 4. **Acessar a Aplicação**
 
 - **Frontend**: [http://localhost:3000](http://localhost:3000)
-- **Backend**: [http://localhost:8000](http://localhost:8000) (se necessário)
+- **Backend**: [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI)
 
 ---
 
 ## 💡 **Funcionalidades**
 
-- **Geração Automática**: Títulos e descrições de produtos com IA.
-- **Salvar Resultados**: Histórico local dos conteúdos gerados.
-- **Exportar para TXT**: Download dos resultados em arquivo .txt.
-- **Visualizar Histórico**: Consulta fácil de criações anteriores.
-- **Tela de Login**: Acesso restrito com autenticação.
+- ✅ **Geração Automática**: Títulos e descrições baseados nas informações do produto.
+- ✅ **Salvar Resultados**: Histórico local das criações no navegador.
+- 🔜 **Exportar para TXT** _(em desenvolvimento)_
+- 🔜 **Tela de Login** _(em planejamento)_
 
 ---
 
 ## 🚀 **Como Contribuir**
 
 1. Faça um fork do projeto.
-2. Crie uma nova branch para sua feature:
+2. Crie uma nova branch:
 
 ```bash
 git checkout -b minha-feature
@@ -83,7 +74,7 @@ git checkout -b minha-feature
 4. Realize o commit:
 
 ```bash
-git commit -am "Adicionando nova funcionalidade"
+git commit -m "Descrição clara da mudança"
 ```
 
 5. Envie a branch:
@@ -92,7 +83,7 @@ git commit -am "Adicionando nova funcionalidade"
 git push origin minha-feature
 ```
 
-6. Abra um Pull Request no repositório original.
+6. Abra um Pull Request.
 
 ---
 
