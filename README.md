@@ -75,12 +75,12 @@ docker-compose up --build
 
 ---
 
-🔐 Credenciais de Acesso (Ambiente Local)
+## 🔐 Credenciais de Acesso (Ambiente Local)
 Para acessar o sistema localmente, use o seguinte login:
 
-Usuário: admin
+- **Usuário**: admin
 
-Senha: 1234
+- **Senha**: 1234
 
 ---
 
