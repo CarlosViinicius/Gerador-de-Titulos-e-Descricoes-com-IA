@@ -35,8 +35,6 @@ API_KEY=sua-chave-da-openai
 BACKEND_URL=http://localhost:8000
 ```
 
-> ⚠️ **Nunca envie o seu `.env` para o GitHub!**
-
 ### 3. **Rodar os Containers com Docker Compose**
 
 Na raiz do projeto, execute:
