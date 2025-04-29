@@ -61,6 +61,22 @@ docker-compose up --build
 
 ---
 
+## 🖼️ Prints da Aplicação
+
+### Tela de Login
+
+![Tela de Login](prints/login.png)
+
+### Tela Principal (vazia)
+
+![Tela Principal](prints/pagina-vazia.png)
+
+### Títulos e Descrições Gerados pela IA
+
+![Resultados IA](prints/geracoes-ia.png)
+
+---
+
 ## 🚀 **Como Contribuir**
 
 1. Faça um fork do projeto.
