@@ -11,8 +11,9 @@ Este projeto permite gerar **títulos e descrições** automaticamente utilizand
 - **React**: Desenvolvimento do front-end.
 - **Tailwind CSS**: Estilização e responsividade do front-end.
 - **FastAPI**: Desenvolvimento do back-end.
+- **OpenAI (GPT-3.5)**: Motor de geração dos textos.
+- **SQLite + SQLAlchemy**: Banco de dados leve e persistente para o histórico.
 - **Docker e Docker Compose**: Containerização da aplicação.
-- **SessionStorage**: Armazenamento local de histórico.
 
 ---
 
@@ -52,10 +53,12 @@ docker-compose up --build
 
 ## 💡 **Funcionalidades**
 
-- ✅ **Geração Automática**: Títulos e descrições baseados nas informações do produto.
-- ✅ **Salvar Resultados**: Histórico local das criações no navegador.
-- 🔜 **Exportar para TXT** _(em desenvolvimento)_
-- 🔜 **Tela de Login** _(em planejamento)_
+- ✅ **Geração Automática**
+- ✅ **Salvamento do histórico no banco SQLite**
+- ✅ **Exclusão individual de itens do histórico**
+- ✅ **Exportar para TXT**
+- ✅ **Tela de Login**
+- 🚧 **Dashboard, configurações e filtros (em breve)**
 
 ---
 
@@ -75,31 +78,6 @@ docker-compose up --build
 
 ---
 
-## 🚀 **Como Contribuir**
-
-1. Faça um fork do projeto.
-2. Crie uma nova branch:
-
-```bash
-git checkout -b minha-feature
-```
-
-3. Faça suas alterações.
-4. Realize o commit:
-
-```bash
-git commit -m "Descrição clara da mudança"
-```
-
-5. Envie a branch:
-
-```bash
-git push origin minha-feature
-```
-
-6. Abra um Pull Request.
-
----
 
 ## 📋 **Licença**
 
