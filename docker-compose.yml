@@ -1,18 +1,32 @@
+version: "3.8"
+
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gerador-backend
+    env_file:
+      - ./backend/.env       
+    volumes:
+      - ./backend:/app          
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend:/app
     restart: always
 
   frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile   
+    container_name: gerador-frontend
+    environment:
+      - CHOKIDAR_USEPOLLING=true 
+      - REACT_APP_API_URL=http://localhost:8000
     volumes:
       - ./frontend:/app
-    restart: always
+      - /app/node_modules        
+    ports:
+      - "3000:3000"
     depends_on:
       - backend
+    restart: always

@@ -54,8 +54,8 @@ docker-compose up --build
 
 - ✅ **Geração Automática**: Títulos e descrições baseados nas informações do produto.
 - ✅ **Salvar Resultados**: Histórico local das criações no navegador.
-- ✅ **Exportar para TXT**.
-- ✅ **Tela de Login**.
+- 🔜 **Exportar para TXT** _(em desenvolvimento)_
+- 🔜 **Tela de Login** _(em planejamento)_
 
 ---
 
@@ -75,12 +75,29 @@ docker-compose up --build
 
 ---
 
-## 🔐 Credenciais de Acesso (Ambiente Local)
-Para acessar o sistema localmente, use o seguinte login:
+## 🚀 **Como Contribuir**
 
-- **Usuário**: admin
+1. Faça um fork do projeto.
+2. Crie uma nova branch:
 
-- **Senha**: 1234
+```bash
+git checkout -b minha-feature
+```
+
+3. Faça suas alterações.
+4. Realize o commit:
+
+```bash
+git commit -m "Descrição clara da mudança"
+```
+
+5. Envie a branch:
+
+```bash
+git push origin minha-feature
+```
+
+6. Abra um Pull Request.
 
 ---
 
