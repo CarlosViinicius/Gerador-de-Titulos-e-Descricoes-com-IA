@@ -1,26 +1,25 @@
 # Dockerfile - BACKEND
 FROM python:3.11-slim
 
-# Define diretório de trabalho
 WORKDIR /app
 
-# Instala dependências do sistema (opcional, caso precise compilar algo)
+# Instala dependências do sistema (se necessário)
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copia e instala as dependências Python
+# Copia e instala dependências Python
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia o restante do código da aplicação
-COPY . .
+# Copia apenas a pasta do código refatorado
+COPY app/ ./app
+COPY .env .env
 
-# Define variável de ambiente para saída não-buffered (útil para logs)
+# Evita buffering nos logs
 ENV PYTHONUNBUFFERED=1
 
-# Expõe a porta que o Uvicorn irá rodar
 EXPOSE 8000
 
-# Comando default para iniciar o servidor FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Comando de inicialização
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

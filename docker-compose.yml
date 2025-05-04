@@ -9,7 +9,7 @@ services:
     env_file:
       - ./backend/.env       
     volumes:
-      - ./backend:/app          
+      - ./backend:/app
     ports:
       - "8000:8000"
     restart: always
@@ -17,14 +17,14 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile   
+      dockerfile: Dockerfile
     container_name: gerador-frontend
     environment:
-      - CHOKIDAR_USEPOLLING=true 
-      - REACT_APP_API_URL=http://localhost:8000
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://backend:8000  # Backend dentro do container
     volumes:
       - ./frontend:/app
-      - /app/node_modules        
+      - /app/node_modules
     ports:
       - "3000:3000"
     depends_on:

@@ -1,8 +1,0 @@
-body {
-    @apply bg-gray-100 text-gray-900;
-  }
-  
-button:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
-}
